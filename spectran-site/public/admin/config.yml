@@ -8,58 +8,45 @@ public_folder: "/images"
 collections:
   - name: "products"
     label: "Товары"
-    files:
-      - name: "products"
-        label: "Список товаров"
-        file: "public/content/products.json"
-        description: "Список всех товаров"
+    folder: "src/content/products"
+    create: true
+    slug: "{{id}}"
+    format: "json"
+    fields:
+      - { label: "ID", name: "id", widget: "string" }
+      - { label: "Название", name: "name", widget: "string" }
+      - { label: "Категория ID", name: "categoryId", widget: "string" }
+      - { label: "Подкатегория ID", name: "subcategoryId", widget: "string", required: false }
+      - { label: "Краткое описание", name: "shortDescription", widget: "text" }
+      - { label: "Полное описание", name: "fullDescription", widget: "markdown" }
+      - { label: "Изображения", name: "images", widget: "list", field: { label: "Image", name: "image", widget: "image" } }
+      - { label: "Лидер продаж", name: "isBestseller", widget: "boolean", required: false }
+      - name: "specifications"
+        label: "Характеристики"
+        widget: "list"
         fields:
-          - name: "products"
-            label: "Товары"
-            widget: "list"
-            fields:
-              - { label: "ID", name: "id", widget: "string" }
-              - { label: "Название", name: "name", widget: "string" }
-              - { label: "Категория ID", name: "categoryId", widget: "string" }
-              - { label: "Подкатегория ID", name: "subcategoryId", widget: "string", required: false }
-              - { label: "Краткое описание", name: "shortDescription", widget: "text" }
-              - { label: "Полное описание", name: "fullDescription", widget: "markdown" }
-              - { label: "Изображения", name: "images", widget: "list", field: { label: "Image", name: "image", widget: "image" } }
-              - { label: "Лидер продаж", name: "isBestseller", widget: "boolean", required: false }
-              - name: "specifications"
-                label: "Характеристики"
-                widget: "list"
-                fields:
-                  - { label: "ID", name: "id", widget: "string" }
-                  - { label: "Название", name: "name", widget: "string" }
-                  - { label: "Значение", name: "value", widget: "string" }
+          - { label: "ID", name: "id", widget: "string" }
+          - { label: "Название", name: "name", widget: "string" }
+          - { label: "Значение", name: "value", widget: "string" }
 
   - name: "categories"
     label: "Категории"
-    files:
-      - name: "categories"
-        label: "Список категорий"
-        file: "public/content/categories.json"
-        fields:
-          - name: "categories"
-            label: "Категории"
-            widget: "list"
-            fields:
-              - { label: "ID", name: "id", widget: "string" }
-              - { label: "Название", name: "name", widget: "string" }
-              - { label: "Описание", name: "description", widget: "string", required: false }
+    folder: "src/content/categories"
+    create: true
+    slug: "{{id}}"
+    format: "json"
+    fields:
+      - { label: "ID", name: "id", widget: "string" }
+      - { label: "Название", name: "name", widget: "string" }
+      - { label: "Описание", name: "description", widget: "string", required: false }
 
   - name: "subcategories"
     label: "Подкатегории"
-    files:
-      - name: "subcategories"
-        label: "Список подкатегорий"
-        file: "public/content/subcategories.json"
-        fields:
-          - name: "subcategories"
-            label: "Подкатегории"
-            widget: "list"
-            fields:
-              - { label: "ID", name: "id", widget: "string" }
-              - { label: "Родительская категория ID", name: "categoryId", widget: "string" }
-              - { label: "Название", name: "name", widget: "string" }
+    folder: "src/content/subcategories"
+    create: true
+    slug: "{{id}}"
+    format: "json"
+    fields:
+      - { label: "ID", name: "id", widget: "string" }
+      - { label: "Родительская категория ID", name: "categoryId", widget: "string" }
+      - { label: "Название", name: "name", widget: "string" }

@@ -1,0 +1,17 @@
+{
+  "id": "2",
+  "categoryId": "2",
+  "subcategoryId": "2-1",
+  "name": "SPC-3200ARM",
+  "shortDescription": "Мощный 32-битный процессор на базе ядра ARM Cortex-M4.",
+  "fullDescription": "Высокопроизводительное решение для задач цифровой обработки сигналов. Встроенный модуль FPU позволяет эффективно работать с плавающей точкой. Поддержка USB, Ethernet и CAN интерфейсов.",
+  "images": ["https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"],
+  "specifications": [
+    { "id": "1", "name": "Ядро", "value": "ARM Cortex-M4" },
+    { "id": "2", "name": "Тактовая частота", "value": "168 МГц" },
+    { "id": "3", "name": "Flash-память", "value": "1 МБ" },
+    { "id": "4", "name": "ОЗУ", "value": "192 КБ" },
+    { "id": "5", "name": "Интерфейсы", "value": "USB OTG, CAN, SPI, I2C" }
+  ],
+  "isBestseller": true
+}

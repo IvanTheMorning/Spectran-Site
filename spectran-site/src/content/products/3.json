@@ -1,0 +1,14 @@
+{
+  "id": "3",
+  "categoryId": "3",
+  "name": "PWR-Module-5A",
+  "shortDescription": "Модуль управления шаговым двигателем до 5А.",
+  "fullDescription": "Интегрированный драйвер шагового двигателя с защитой от перегрева и перегрузки по току. Поддерживает микрошаговый режим до 1/256.",
+  "images": ["https://images.unsplash.com/photo-1563770095-39d46e84d87c?auto=format&fit=crop&w=800&q=80"],
+  "specifications": [
+    { "id": "1", "name": "Максимальный ток", "value": "5 А" },
+    { "id": "2", "name": "Напряжение питания", "value": "12 - 48 В" },
+    { "id": "3", "name": "Микрошаг", "value": "до 1/256" },
+    { "id": "4", "name": "Защита", "value": "Thermal, Overcurrent" }
+  ]
+}

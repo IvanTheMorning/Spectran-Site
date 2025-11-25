@@ -2,39 +2,33 @@ import type { Product, Category, Subcategory } from '../types';
 
 export const api = {
   getProducts: async (): Promise<Product[]> => {
-    try {
-      const response = await fetch('/content/products.json');
-      if (!response.ok) throw new Error('Failed to fetch products');
-      const data = await response.json();
-      return data.products || [];
-    } catch (error) {
-      console.error(error);
-      return [];
+    const files = import.meta.glob('../content/products/*.json');
+    const products: Product[] = [];
+    for (const path in files) {
+      const mod = await files[path]() as { default: Product };
+      products.push(mod.default);
     }
+    return products;
   },
 
   getCategories: async (): Promise<Category[]> => {
-    try {
-      const response = await fetch('/content/categories.json');
-      if (!response.ok) throw new Error('Failed to fetch categories');
-      const data = await response.json();
-      return data.categories || [];
-    } catch (error) {
-      console.error(error);
-      return [];
+    const files = import.meta.glob('../content/categories/*.json');
+    const categories: Category[] = [];
+    for (const path in files) {
+      const mod = await files[path]() as { default: Category };
+      categories.push(mod.default);
     }
+    return categories;
   },
 
   getSubcategories: async (): Promise<Subcategory[]> => {
-    try {
-      const response = await fetch('/content/subcategories.json');
-      if (!response.ok) throw new Error('Failed to fetch subcategories');
-      const data = await response.json();
-      return data.subcategories || [];
-    } catch (error) {
-      console.error(error);
-      return [];
+    const files = import.meta.glob('../content/subcategories/*.json');
+    const subcategories: Subcategory[] = [];
+    for (const path in files) {
+      const mod = await files[path]() as { default: Subcategory };
+      subcategories.push(mod.default);
     }
+    return subcategories;
   },
 
   getProduct: async (id: string): Promise<Product | undefined> => {
