@@ -8,7 +8,7 @@ public_folder: "/images"
 collections:
   - name: "products"
     label: "Товары"
-    folder: "src/content/products"
+    folder: "spectran-site/src/content/products"
     create: true
     slug: "{{name}}"
     format: "json"
@@ -32,7 +32,7 @@ collections:
 
   - name: "categories"
     label: "Категории"
-    folder: "src/content/categories"
+    folder: "spectran-site/src/content/categories"
     create: true
     slug: "{{name}}"
     format: "json"
@@ -44,7 +44,7 @@ collections:
 
   - name: "subcategories"
     label: "Подкатегории"
-    folder: "src/content/subcategories"
+    folder: "spectran-site/src/content/subcategories"
     create: true
     slug: "{{name}}"
     format: "json"
