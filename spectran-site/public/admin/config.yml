@@ -22,13 +22,12 @@ collections:
       - { label: "Полное описание", name: "fullDescription", widget: "markdown" }
       - { label: "Изображения", name: "images", widget: "list", field: { label: "Image", name: "image", widget: "image" } }
       - { label: "Лидер продаж", name: "isBestseller", widget: "boolean", required: false }
-      - name: "specifications"
-        label: "Характеристики"
-        widget: "list"
-        fields:
-          - { label: "ID", name: "id", widget: "string" }
-          - { label: "Название", name: "name", widget: "string" }
-          - { label: "Значение", name: "value", widget: "string" }
+              - name: "specifications"
+                label: "Характеристики"
+                widget: "list"
+                fields:
+                  - { label: "Название", name: "name", widget: "string" }
+                  - { label: "Значение", name: "value", widget: "string" }
 
   - name: "categories"
     label: "Категории"

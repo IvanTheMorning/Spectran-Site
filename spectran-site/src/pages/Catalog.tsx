@@ -172,8 +172,8 @@ export function Catalog() {
                   </p>
                   
                   <div className="space-y-2 mb-6 flex-grow">
-                    {product.specifications.slice(0, 3).map(spec => (
-                      <div key={spec.id} className="flex justify-between text-xs text-gray-500 border-b border-gray-50 pb-1">
+                    {product.specifications.slice(0, 3).map((spec, index) => (
+                      <div key={index} className="flex justify-between text-xs text-gray-500 border-b border-gray-50 pb-1">
                         <span>{spec.name}</span>
                         <span className="font-medium text-gray-700">{spec.value}</span>
                       </div>

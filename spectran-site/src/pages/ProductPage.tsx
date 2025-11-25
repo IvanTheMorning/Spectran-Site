@@ -89,8 +89,8 @@ export function ProductPage() {
               Технические характеристики
             </h3>
             <div className="space-y-3">
-              {product.specifications.map((spec) => (
-                <div key={spec.id} className="flex justify-between items-center py-2 border-b border-gray-200 last:border-0">
+              {product.specifications.map((spec, index) => (
+                <div key={index} className="flex justify-between items-center py-2 border-b border-gray-200 last:border-0">
                   <span className="text-gray-600">{spec.name}</span>
                   <span className="font-medium text-gray-900">{spec.value}</span>
                 </div>
