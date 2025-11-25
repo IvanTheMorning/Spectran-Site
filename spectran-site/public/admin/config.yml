@@ -24,7 +24,7 @@ collections:
               - { label: "Подкатегория ID", name: "subcategoryId", widget: "string", required: false }
               - { label: "Краткое описание", name: "shortDescription", widget: "text" }
               - { label: "Полное описание", name: "fullDescription", widget: "markdown" }
-              - { label: "Изображения", name: "images", widget: "list", field: { widget: "image" } }
+              - { label: "Изображения", name: "images", widget: "list", field: { label: "Image", name: "image", widget: "image" } }
               - { label: "Лидер продаж", name: "isBestseller", widget: "boolean", required: false }
               - name: "specifications"
                 label: "Характеристики"
