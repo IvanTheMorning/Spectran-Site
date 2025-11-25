@@ -6,7 +6,11 @@ export const api = {
     const products: Product[] = [];
     for (const path in files) {
       const mod = await files[path]() as { default: Product };
-      products.push(mod.default);
+      const product = mod.default;
+      if (!product.id) {
+        product.id = path.split('/').pop()?.replace('.json', '') || '';
+      }
+      products.push(product);
     }
     return products;
   },
@@ -16,7 +20,11 @@ export const api = {
     const categories: Category[] = [];
     for (const path in files) {
       const mod = await files[path]() as { default: Category };
-      categories.push(mod.default);
+      const category = mod.default;
+      if (!category.id) {
+        category.id = path.split('/').pop()?.replace('.json', '') || '';
+      }
+      categories.push(category);
     }
     return categories;
   },
@@ -26,7 +34,11 @@ export const api = {
     const subcategories: Subcategory[] = [];
     for (const path in files) {
       const mod = await files[path]() as { default: Subcategory };
-      subcategories.push(mod.default);
+      const subcategory = mod.default;
+      if (!subcategory.id) {
+        subcategory.id = path.split('/').pop()?.replace('.json', '') || '';
+      }
+      subcategories.push(subcategory);
     }
     return subcategories;
   },

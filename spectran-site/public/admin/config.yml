@@ -12,12 +12,12 @@ collections:
     create: true
     slug: "{{name}}"
     format: "json"
+    extension: "json"
     identifier_field: "name"
     fields:
-      - { label: "ID", name: "id", widget: "uuid" }
       - { label: "Название", name: "name", widget: "string" }
-      - { label: "Категория", name: "categoryId", widget: "relation", collection: "categories", search_fields: ["name"], value_field: "id", display_fields: ["name"] }
-      - { label: "Подкатегория", name: "subcategoryId", widget: "relation", collection: "subcategories", search_fields: ["name"], value_field: "id", display_fields: ["name"], required: false }
+      - { label: "Категория", name: "categoryId", widget: "relation", collection: "categories", search_fields: ["name"], value_field: "{{slug}}", display_fields: ["name"] }
+      - { label: "Подкатегория", name: "subcategoryId", widget: "relation", collection: "subcategories", search_fields: ["name"], value_field: "{{slug}}", display_fields: ["name"], required: false }
       - { label: "Краткое описание", name: "shortDescription", widget: "text" }
       - { label: "Полное описание", name: "fullDescription", widget: "markdown" }
       - { label: "Изображения", name: "images", widget: "list", field: { label: "Image", name: "image", widget: "image" } }
@@ -36,9 +36,9 @@ collections:
     create: true
     slug: "{{name}}"
     format: "json"
+    extension: "json"
     identifier_field: "name"
     fields:
-      - { label: "ID", name: "id", widget: "uuid" }
       - { label: "Название", name: "name", widget: "string" }
       - { label: "Описание", name: "description", widget: "string", required: false }
 
@@ -48,8 +48,8 @@ collections:
     create: true
     slug: "{{name}}"
     format: "json"
+    extension: "json"
     identifier_field: "name"
     fields:
-      - { label: "ID", name: "id", widget: "uuid" }
-      - { label: "Родительская категория", name: "categoryId", widget: "relation", collection: "categories", search_fields: ["name"], value_field: "id", display_fields: ["name"] }
+      - { label: "Родительская категория", name: "categoryId", widget: "relation", collection: "categories", search_fields: ["name"], value_field: "{{slug}}", display_fields: ["name"] }
       - { label: "Название", name: "name", widget: "string" }
